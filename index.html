@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<!-- OG: после деплоя замените оба ЗАМЕНИТЕ_НА_ВАШ_URL на ваш Netlify URL (например https://li-vadri.netlify.app) -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Визуал который продаёт — Лидия Вадри">
 <meta property="og:description" content="Практикум для бьюти-мастеров. 5 ошибок + система из 6 шагов. Профиль в Instagram, который приводит клиенток — без рекламы. 1 390 ₽ вместо 10 990 ₽.">
-<meta property="og:image" content="ЗАМЕНИТЕ_НА_ВАШ_URL/og-preview.jpg">
-<meta property="og:url" content="ЗАМЕНИТЕ_НА_ВАШ_URL/">
+<meta property="og:image" content="REPLACE_OG_IMAGE_URL">
+<meta property="og:url" content="REPLACE_SITE_URL">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -68,19 +67,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     filter: grayscale(30%) contrast(1.05);
   }
 
-  /* Gradient: cream/transparent at top → crimson at bottom */
+  /* Dark overlay at bottom for text readability, no red tint */
   .hero-photo::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
       linear-gradient(to bottom,
-        rgba(250,248,243,0.15) 0%,
-        rgba(250,248,243,0.05) 15%,
-        transparent 30%,
-        rgba(140,26,42,0.3) 55%,
-        rgba(106,17,32,0.88) 78%,
-        rgba(106,17,32,0.98) 100%
+        rgba(16,10,8,0.08) 0%,
+        transparent 25%,
+        transparent 42%,
+        rgba(16,10,8,0.55) 62%,
+        rgba(16,10,8,0.88) 82%,
+        rgba(16,10,8,0.97) 100%
       );
   }
 
@@ -135,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-weight: 600;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.8);
     margin-bottom: 14px;
     display: flex;
     align-items: center;
@@ -147,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: block;
     width: 18px;
     height: 1px;
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.6);
   }
 
   .hero h1 {
@@ -209,15 +208,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     text-decoration: line-through;
   }
 
+  .badge-crim{background:var(--crimson);color:#fff;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:2px}
   .badge {
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.25);
-    color: #fff;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 2px 8px;
-    border-radius: 2px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 2px 10px;
+    border-radius: 0;
   }
 
   .price-main {
@@ -529,9 +531,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   .stat-label {
-    font-size: 11px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
     margin-top: 8px;
     line-height: 1.4;
   }
@@ -568,6 +570,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .format-card {
     background: var(--bg2);
     border-radius: 2px;
+    border: 1px solid #D4C8BA;
     padding: 22px 18px;
   }
 
@@ -628,12 +631,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .program-result {
     font-size: 12px;
     font-weight: 300;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.8);
     line-height: 1.55;
   }
 
   .program-result strong {
-    color: rgba(255,255,255,0.8);
+    color: #fff;
     font-weight: 600;
   }
 
@@ -696,13 +699,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   .badge-crim {
-    background: var(--crimson);
-    color: #fff;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 3px 8px;
-    border-radius: 2px;
+    background: transparent;
+    border: 1px solid var(--crimson);
+    color: var(--crimson);
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 2px 10px;
+    border-radius: 0;
   }
 
   /* ─── REVIEWS ─── */
@@ -916,290 +922,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .fade-in.visible { opacity: 1; transform: none; }
 
   /* ─── MODAL ─── */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(26,22,20,0.72);
-    z-index: 100;
-    align-items: flex-end;
-    justify-content: center;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-
-  .modal-overlay.open {
-    display: flex;
-    animation: overlay-in 0.3s ease;
-  }
-
-  @keyframes overlay-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-
-  .modal {
-    background: var(--bg);
-    width: 100%;
-    max-width: 480px;
-    border-radius: 4px 4px 0 0;
-    padding: 36px 28px 48px;
-    position: relative;
-    animation: sheet-up 0.35s cubic-bezier(0.32,0.72,0,1);
-  }
-
-  @keyframes sheet-up {
-    from { transform: translateY(100%); }
-    to   { transform: translateY(0); }
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    width: 32px;
-    height: 32px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--mid);
-    font-size: 22px;
-    line-height: 1;
-    padding: 0;
-  }
-
-  .modal-eyebrow {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--crimson);
-    margin-bottom: 6px;
-  }
-
-  .modal h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.1;
-    margin-bottom: 6px;
-  }
-
-  .modal h3 em { font-style: italic; font-weight: 400; color: var(--crimson); }
-
-  .modal-price-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 28px;
-  }
-
-  .modal-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -1px;
-    line-height: 1;
-  }
-
-  .modal-old {
-    font-size: 13px;
-    color: var(--mid);
-    text-decoration: line-through;
-    font-weight: 300;
-  }
-
-  .form-field {
-    margin-bottom: 16px;
-  }
-
-  .form-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--mid);
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .form-input {
-    width: 100%;
-    height: 52px;
-    border: 1px solid var(--faint);
-    border-radius: 2px;
-    background: var(--bg);
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--ink);
-    padding: 0 16px;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
-  }
-
-  .form-input::placeholder { color: var(--mid); opacity: 0.55; }
-
-  .form-input:focus { border-color: var(--crimson); }
-
-  .form-input.error { border-color: #C0392B; }
-
-  .form-error {
-    font-size: 11px;
-    color: #C0392B;
-    margin-top: 5px;
-    display: none;
-  }
-
-  .form-error.show { display: block; }
-
-  .modal-submit {
-    display: block;
-    width: 100%;
-    height: 56px;
-    margin-top: 24px;
-    background: var(--crimson);
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .modal-submit:active { background: var(--crim-dk); }
-
-  .modal-note {
-    font-size: 10px;
-    font-weight: 300;
-    color: var(--mid);
-    text-align: center;
-    margin-top: 12px;
-    line-height: 1.6;
-  }
-
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(26,22,20,.72);z-index:100;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  .modal-overlay.open{display:flex;animation:ov-in .3s ease}
+  @keyframes ov-in{from{opacity:0}to{opacity:1}}
+  .modal{background:var(--bg);width:100%;max-width:480px;border-radius:4px 4px 0 0;padding:36px 28px 48px;position:relative;animation:sh-up .35s cubic-bezier(.32,.72,0,1)}
+  @keyframes sh-up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .modal-close{position:absolute;top:16px;right:20px;width:32px;height:32px;border:none;background:none;cursor:pointer;color:var(--mid);font-size:22px;line-height:1;padding:0;display:flex;align-items:center;justify-content:center}
+  .modal-eyebrow{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--crimson);margin-bottom:6px}
+  .modal h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:6px}
+  .modal h3 em{font-style:italic;font-weight:400;color:var(--crimson)}
+  .modal-price-row{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+  .modal-price{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--ink);letter-spacing:-1px;line-height:1}
+  .modal-old{font-size:13px;color:var(--mid);text-decoration:line-through;font-weight:300}
+  .form-field{margin-bottom:16px}
+  .form-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:8px}
+  .form-input{width:100%;height:52px;border:1px solid var(--faint);border-radius:2px;background:var(--bg);font-family:'Raleway',sans-serif;font-size:16px;color:var(--ink);padding:0 16px;outline:none;transition:border-color .2s;-webkit-appearance:none}
+  .form-input::placeholder{color:var(--mid);opacity:.55}
+  .form-input:focus{border-color:var(--crimson)}
+  .form-input.err{border-color:#c0392b}
+  .form-err{font-size:11px;color:#c0392b;margin-top:5px;display:none}
+  .form-err.show{display:block}
+  .modal-submit{display:block;width:100%;height:56px;margin-top:24px;background:var(--crimson);color:#fff;font-family:'Raleway',sans-serif;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .2s}
+  .modal-submit:active{background:var(--crim-dk)}
+  .modal-note{font-size:10px;font-weight:300;color:var(--mid);text-align:center;margin-top:12px;line-height:1.6}
 
   /* ─── TIMER ─── */
-  .hero-timer {
-    margin-bottom: 20px;
-  }
-  .timer-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    display: block;
-    margin-bottom: 4px;
-  }
-  .timer-digits {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 3px;
-    line-height: 1;
-  }
+  .hero-timer{margin-bottom:20px}
+  .timer-label{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.45);display:block;margin-bottom:4px}
+  .timer-digits{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#fff;letter-spacing:3px;line-height:1}
 
   /* ─── STICKY BAR ─── */
-  .sticky-bar {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(110%);
-    width: 100%;
-    max-width: 480px;
-    background: var(--crim-dk);
-    padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
-    z-index: 50;
-    transition: transform 0.38s cubic-bezier(0.32,0.72,0,1);
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .sticky-bar.visible { transform: translateX(-50%) translateY(0); }
-  .sticky-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-  }
-  .sticky-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.5px;
-    line-height: 1;
-  }
-  .sticky-old-price {
-    font-size: 10px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.38);
-    text-decoration: line-through;
-    margin-top: 2px;
-  }
-  .sticky-cta {
-    height: 48px;
-    padding: 0 26px;
-    background: #fff;
-    color: var(--crimson);
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: background 0.2s;
-  }
-  .sticky-cta:active { background: var(--bg2); }
+  .sticky-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%) translateY(110%);width:100%;max-width:480px;background:var(--crim-dk);padding:14px 20px calc(14px + env(safe-area-inset-bottom));z-index:50;transition:transform .38s cubic-bezier(.32,.72,0,1);border-top:1px solid rgba(255,255,255,.1)}
+  .sticky-bar.visible{transform:translateX(-50%) translateY(0)}
+  .sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .sticky-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;letter-spacing:-.5px;line-height:1}
+  .sticky-old-price{font-size:10px;font-weight:300;color:rgba(255,255,255,.38);text-decoration:line-through;margin-top:2px}
+  .sticky-cta{height:48px;padding:0 26px;background:#fff;color:var(--crimson);font-family:'Raleway',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s}
+  .sticky-cta:active{background:var(--bg2)}
 
-  /* ─── PRIVACY MODAL ─── */
-  .privacy-modal { max-height: 82svh; overflow-y: auto; }
-  .privacy-body { margin-top: 20px; }
-  .privacy-body h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--ink);
-    margin: 22px 0 6px;
-  }
-  .privacy-body h4:first-child { margin-top: 0; }
-  .privacy-body p {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.75;
-    color: var(--mid);
-    margin-bottom: 6px;
-  }
-  .footer-privacy { margin-top: 16px; }
-  .privacy-link {
-    font-size: 10px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: rgba(255,255,255,0.25);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'Raleway', sans-serif;
-    padding: 0;
-  }
+  /* ─── PRIVACY ─── */
+  .privacy-modal{max-height:82svh;overflow-y:auto}
+  .privacy-body{margin-top:20px}
+  .privacy-body h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--ink);margin:22px 0 6px}
+  .privacy-body h4:first-child{margin-top:0}
+  .privacy-body p{font-size:13px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:6px}
+  .footer-privacy{margin-top:16px}
+  .privacy-link{font-size:10px;font-weight:300;letter-spacing:1px;color:rgba(255,255,255,.25);text-decoration:underline;text-underline-offset:3px;background:none;border:none;cursor:pointer;font-family:'Raleway',sans-serif;padding:0}
 
 </style>
+<template id="__bundler_thumbnail" data-bg-color="#6A1120">
+  <svg viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="700" fill="#6A1120"/>
+    <rect x="40" y="60" width="320" height="220" rx="2" fill="#8C1A2A"/>
+    <rect x="40" y="300" width="160" height="10" rx="1" fill="#FAF8F3" opacity="0.6"/>
+    <rect x="40" y="320" width="260" height="6" rx="1" fill="#FAF8F3" opacity="0.2"/>
+    <rect x="40" y="334" width="220" height="6" rx="1" fill="#FAF8F3" opacity="0.2"/>
+    <rect x="40" y="360" width="320" height="52" rx="1" fill="#FAF8F3"/>
+    <rect x="40" y="430" width="320" height="1" fill="#FAF8F3" opacity="0.15"/>
+    <rect x="40" y="452" width="240" height="6" rx="1" fill="#FAF8F3" opacity="0.2"/>
+    <rect x="40" y="466" width="180" height="6" rx="1" fill="#FAF8F3" opacity="0.2"/>
+  </svg>
+</template>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1218,7 +1001,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-handle">@li_vadri</div>
   </div>
   <div class="hero-body">
-    <div class="eyebrow" style="font-size: 10px; color: rgb(255, 255, 255); line-height: 1.45">Практикум для бьюти-мастера</div>
+    <div class="eyebrow" style="font-size: 10px; color: rgb(255, 255, 255); line-height: 1.45">ПРАКТИКУМ ДЛЯ БЬЮТИ-МАСТЕРОВ</div>
     <h1>Визуал<br>который<br><em>продаёт</em></h1>
     <p class="hero-sub">Как собрать профиль в Instagram, который приводит клиенток — без платной рекламы</p>
     <div class="hero-chips">
@@ -1237,7 +1020,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="timer-label">Цена действует ещё</span>
       <div class="timer-digits" id="heroTimer">--:--:--</div>
     </div>
-    <a href="#payment" class="btn">Купить практикум</a>
+        <a href="#payment" class="btn">Купить практикум</a>
   </div>
 </section>
 
@@ -1290,6 +1073,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="author-fact"><span class="fact-dot"></span><span>Работаю в 4 странах</span></div>
       <div class="author-fact"><span class="fact-dot"></span><span>@li_vadri в Instagram</span></div>
     </div>
+
+    <!-- ПРИЗНАНИЕ -->
+    <div style="margin-top:36px;padding-top:32px;border-top:1px solid var(--faint);">
+      <div class="sec-eyebrow" style="margin-bottom:20px;">Признание</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:28px;">
+        <div style="text-align:center;padding:16px 8px;background:var(--bg2);border:1px solid var(--faint);">
+          <div style="font-size:20px;margin-bottom:8px;">🏆</div>
+          <div style="font-family:'Playfair Display',serif;font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">1 место</div>
+          <div style="font-size:10px;font-weight:300;color:var(--mid);margin-top:4px;line-height:1.4;">WW Awards Russia '25</div>
+        </div>
+        <div style="text-align:center;padding:16px 8px;background:var(--bg2);border:1px solid var(--faint);">
+          <div style="font-size:20px;margin-bottom:8px;">🏆</div>
+          <div style="font-family:'Playfair Display',serif;font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">Top-13</div>
+          <div style="font-size:10px;font-weight:300;color:var(--mid);margin-top:4px;line-height:1.4;">Top100Awards Russia '24</div>
+        </div>
+        <div style="text-align:center;padding:16px 8px;background:var(--bg2);border:1px solid var(--faint);">
+          <div style="font-size:20px;margin-bottom:8px;">🏆</div>
+          <div style="font-family:'Playfair Display',serif;font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">Шорт-лист</div>
+          <div style="font-size:10px;font-weight:300;color:var(--mid);margin-top:4px;line-height:1.4;">Wedding Awards '25</div>
+        </div>
+      </div>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--mid);line-height:1.7;">Красивые проекты — это не удача. Это система.<br>Профиль в Instagram — её видимая часть.<br>Измени визуал сегодня — и сделай первый шаг к клиентам, которых хочешь.</p>
+    </div>
   </div>
 </section>
 <div style="height:60px; background:var(--bg); border-bottom:1px solid var(--faint);"></div>
@@ -1331,7 +1137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="sec-eyebrow">Формат</div>
   <h2 class="sec-title">Как это<br><em>работает</em></h2>
   <div class="format-grid">
-    <div class="format-card"><span class="format-num">01</span><div class="format-title">Сразу в Telegram</div><div class="format-desc">Урок приходит файлом после оплаты</div></div>
+    <div class="format-card"><span class="format-num">01</span><div class="format-title">Доступ сразу после оплаты</div><div class="format-desc">Урок приходит файлом в Telegram в течение 1 минуты</div></div>
     <div class="format-card"><span class="format-num">02</span><div class="format-title">50 минут</div><div class="format-desc">Смотришь когда удобно, без дедлайнов</div></div>
     <div class="format-card"><span class="format-num">03</span><div class="format-title">Внедряй сразу</div><div class="format-desc">Никакого сложного дизайна</div></div>
     <div class="format-card"><span class="format-num">04</span><div class="format-title">Только телефон</div><div class="format-desc">Компьютер не нужен</div></div>
@@ -1344,6 +1150,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="deco-num" style="right:-8px; top:-10px;">05</span>
   <div class="sec-eyebrow">Программа</div>
   <h2 class="sec-title">Что внутри<br><em>практикума</em></h2>
+  <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:2px;padding:12px 16px;margin-bottom:28px;">
+    <p style="font-size:11px;font-weight:300;color:rgba(255,255,255,0.7);line-height:1.6;font-style:italic;">Актуально на 2026 год — алгоритмы, форматы, примеры из реальных аккаунтов</p>
+  </div>
   <div class="program-list">
     <div class="program-item"><div class="program-num">01 —</div><div class="program-title">Почему красивые работы не приносят клиентов</div><div class="program-result"><strong>Разберёшь</strong> главную ошибку которую делают 9 из 10 мастеров</div></div>
     <div class="program-item"><div class="program-num">02 —</div><div class="program-title">5 ошибок которые разрушают доверие с первого взгляда</div><div class="program-result"><strong>Проверишь</strong> свой профиль по чёткому списку</div></div>
@@ -1412,7 +1221,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="faq-item"><div class="faq-q"><span class="faq-q-text">Нужен ли дизайнер или компьютер?</span><span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner">Нет. Всё делаешь сама на телефоне. Никаких сложных программ.</div></div></div>
     <div class="faq-item"><div class="faq-q"><span class="faq-q-text">У меня мало подписчиков</span><span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner">Визуал работает при любой аудитории. Даже от 300 человек.</div></div></div>
     <div class="faq-item"><div class="faq-q"><span class="faq-q-text">Я уже проходила курсы по контенту</span><span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner">Это не про контент-план. 50 минут конкретных инструментов по визуалу.</div></div></div>
-    <div class="faq-item"><div class="faq-q"><span class="faq-q-text">Как получу урок?</span><span class="faq-icon">+</span></div><div class="faq-answer"><div class="faq-answer-inner">Сразу после оплаты тебя перенаправит в Telegram-бот. Файл придёт в течение 1 минуты.</div></div></div>
+    <div class="faq-item open"><div class="faq-q"><span class="faq-q-text">Как получу урок?</span><span class="faq-icon">+</span></div><div class="faq-answer" style="max-height:220px;"><div class="faq-answer-inner">Сразу после оплаты тебя перенаправит в Telegram-бот. Файл придёт в течение 1 минуты.</div></div></div>
   </div>
 </section>
 
@@ -1420,7 +1229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ── FINAL CTA ── -->
 <section class="final fade-in" id="payment">
   <div class="deco-num">06</div>
-  <div class="final-label">Практикум для бьюти-мастера</div>
+  <div class="final-label">ПРАКТИКУМ ДЛЯ БЬЮТИ-МАСТЕРОВ</div>
   <div class="final-rule"></div>
   <h2>Один раз пересобираешь профиль — клиентки начинают <em>писать сами</em></h2>
   <p class="final-sub">Доступ сразу после оплаты · Файл в Telegram<br>50 минут · Внедряй в тот же день</p>
@@ -1436,167 +1245,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="footer">
   <div class="footer-name">Лидия Вадри</div>
   <div class="footer-sub">Свадебный стилист · Наставник · @li_vadri</div>
-  <div class="footer-privacy"><button class="privacy-link" id="privacyLink">Политика конфиденциальности</button></div>
+  <div class="footer-privacy"><button class="privacy-link" id="privacyFooter">Политика конфиденциальности</button></div>
 </div>
 
 <script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const was = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!was) item.classList.add('open');
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const it=q.parentElement, was=it.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!was) it.classList.add('open');
     });
   });
 
   // Scroll fade-in
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:0.08});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 
-  // Modal
-  const modal = document.getElementById('buyModal');
-  const buyForm = document.getElementById('buyForm');
+  // ── Modal ──
+  const buyModal=document.getElementById('buyModal');
+  function openModal(){buyModal.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('fName').focus(),350);}
+  function closeModal(){buyModal.classList.remove('open');document.body.style.overflow='';}
+  document.querySelectorAll('.btn').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();openModal();}));
+  document.getElementById('modalClose').addEventListener('click',closeModal);
+  buyModal.addEventListener('click',e=>{if(e.target===buyModal)closeModal();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&buyModal.classList.contains('open'))closeModal();});
 
-  function openModal() {
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => document.getElementById('fieldName').focus(), 350);
+  // ── Phone mask ──
+  const ph=document.getElementById('fPhone');
+  function applyMask(v){
+    let d=v.replace(/\D/g,'');
+    if(d.startsWith('8'))d='7'+d.slice(1);
+    if(d.length&&!d.startsWith('7'))d='7'+d;
+    d=d.slice(0,11);
+    if(!d.length)return'';
+    let o='+7';
+    if(d.length>1)o+=' ('+d.slice(1,4);
+    if(d.length>=4)o+=') '+d.slice(4,7);
+    if(d.length>=7)o+='-'+d.slice(7,9);
+    if(d.length>=9)o+='-'+d.slice(9,11);
+    return o;
   }
+  ph.addEventListener('input',function(){const p=this.selectionStart,pv=this.value;this.value=applyMask(this.value);try{const d=this.value.length-pv.length;this.setSelectionRange(p+d,p+d);}catch(e){}});
+  ph.addEventListener('keydown',function(e){if(e.key==='Backspace'&&this.value==='+7 ('){this.value='';e.preventDefault();}});
+  ph.addEventListener('focus',function(){if(!this.value)this.value='+7 (';});
+  ph.addEventListener('blur',function(){if(this.value==='+7 ('||this.value==='+7')this.value='';});
 
-  function closeModal() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      openModal();
-    });
-  });
-
-  document.getElementById('modalClose').addEventListener('click', closeModal);
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  // Phone mask: +7 (XXX) XXX-XX-XX
-  const phoneInput = document.getElementById('fieldPhone');
-
-  function applyMask(val) {
-    let digits = val.replace(/\D/g, '');
-    if (digits.startsWith('8')) digits = '7' + digits.slice(1);
-    if (!digits.startsWith('7') && digits.length > 0) digits = '7' + digits;
-    digits = digits.slice(0, 11);
-
-    let out = '';
-    if (digits.length === 0) return '';
-    out = '+7';
-    if (digits.length > 1) out += ' (' + digits.slice(1, 4);
-    if (digits.length >= 4) out += ') ' + digits.slice(4, 7);
-    if (digits.length >= 7) out += '-' + digits.slice(7, 9);
-    if (digits.length >= 9) out += '-' + digits.slice(9, 11);
-    return out;
-  }
-
-  phoneInput.addEventListener('input', function() {
-    const pos = this.selectionStart;
-    const prev = this.value;
-    this.value = applyMask(this.value);
-    // keep cursor reasonable
-    const diff = this.value.length - prev.length;
-    try { this.setSelectionRange(pos + diff, pos + diff); } catch(e) {}
-  });
-
-  phoneInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Backspace' && this.value === '+7 (') {
-      this.value = '';
-      e.preventDefault();
-    }
-  });
-
-  phoneInput.addEventListener('focus', function() {
-    if (!this.value) this.value = '+7 (';
-  });
-
-  phoneInput.addEventListener('blur', function() {
-    if (this.value === '+7 (' || this.value === '+7') this.value = '';
-  });
-
-  // Form validation & submit
-  buyForm.addEventListener('submit', function(e) {
+  // ── Form submit ──
+  document.getElementById('buyForm').addEventListener('submit',function(e){
     e.preventDefault();
-    let valid = true;
-
-    const nameVal = document.getElementById('fieldName').value.trim();
-    const nameErr = document.getElementById('errName');
-    const nameInp = document.getElementById('fieldName');
-    if (!nameVal) {
-      nameInp.classList.add('error');
-      nameErr.classList.add('show');
-      valid = false;
-    } else {
-      nameInp.classList.remove('error');
-      nameErr.classList.remove('show');
-    }
-
-    const phoneVal = document.getElementById('fieldPhone').value.replace(/\D/g, '');
-    const phoneErr = document.getElementById('errPhone');
-    const phoneInp = document.getElementById('fieldPhone');
-    if (phoneVal.length < 11) {
-      phoneInp.classList.add('error');
-      phoneErr.classList.add('show');
-      valid = false;
-    } else {
-      phoneInp.classList.remove('error');
-      phoneErr.classList.remove('show');
-    }
-
-    if (!valid) return;
-
-    // TODO: send to payment/CRM endpoint
-    // For now, close modal as placeholder
+    let ok=true;
+    const name=document.getElementById('fName'),ne=document.getElementById('errName');
+    if(!name.value.trim()){name.classList.add('err');ne.classList.add('show');ok=false;}
+    else{name.classList.remove('err');ne.classList.remove('show');}
+    const phone=document.getElementById('fPhone'),pe=document.getElementById('errPhone');
+    if(phone.value.replace(/\D/g,'').length<11){phone.classList.add('err');pe.classList.add('show');ok=false;}
+    else{phone.classList.remove('err');pe.classList.remove('show');}
+    if(!ok)return;
+    // TODO: connect payment gateway
     closeModal();
-    buyForm.reset();
+    this.reset();
   });
+
+  // ── Timer ──
+  (function(){
+    const KEY='lv_dl';
+    let dl=parseInt(localStorage.getItem(KEY));
+    if(!dl||dl<Date.now()){dl=Date.now()+24*3600000;localStorage.setItem(KEY,dl);}
+    const el=document.getElementById('heroTimer');
+    function tick(){
+      const diff=dl-Date.now();
+      if(diff<=0){el.textContent='00:00:00';return;}
+      const h=String(Math.floor(diff/3600000)).padStart(2,'0');
+      const m=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+      const s=String(Math.floor(diff%60000/1000)).padStart(2,'0');
+      el.textContent=h+':'+m+':'+s;
+      setTimeout(tick,1000);
+    }
+    tick();
+  })();
+
+  // ── Sticky bar ──
+  (function(){
+    const bar=document.getElementById('stickyBar');
+    const hero=document.querySelector('.hero');
+    const fin=document.querySelector('.final');
+    function upd(){
+      const hg=hero.getBoundingClientRect().bottom<0;
+      const fv=fin.getBoundingClientRect().top<window.innerHeight*.85;
+      bar.classList.toggle('visible',hg&&!fv);
+    }
+    window.addEventListener('scroll',upd,{passive:true});
+    document.getElementById('stickyCta').addEventListener('click',openModal);
+  })();
+
+  // ── Privacy modal ──
+  (function(){
+    const pm=document.getElementById('privacyModal');
+    function openPr(e){e.preventDefault();pm.classList.add('open');document.body.style.overflow='hidden';}
+    function closePr(){pm.classList.remove('open');document.body.style.overflow='';}
+    document.getElementById('privacyFooter').addEventListener('click',openPr);
+    document.getElementById('privacyFromModal').addEventListener('click',openPr);
+    document.getElementById('privacyClose').addEventListener('click',closePr);
+    pm.addEventListener('click',e=>{if(e.target===pm)closePr();});
+  })();
 </script>
-
-
-<!-- ── MODAL FORM ── -->
-<div class="modal-overlay" id="buyModal" role="dialog" aria-modal="true" aria-label="Купить практикум">
-  <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Закрыть">&#215;</button>
-    <div class="modal-eyebrow">Практикум</div>
-    <h3>Визуал который<br><em>продаёт</em></h3>
-    <div class="modal-price-row">
-      <span class="modal-price">1 390 ₽</span>
-      <span class="modal-old">10 990 ₽</span>
-      <span class="badge-crim">−87%</span>
-    </div>
-    <form id="buyForm" novalidate>
-      <div class="form-field">
-        <label class="form-label" for="fieldName">Имя</label>
-        <input class="form-input" id="fieldName" type="text" placeholder="Ваше имя" autocomplete="given-name" required>
-        <div class="form-error" id="errName">Введите ваше имя</div>
-      </div>
-      <div class="form-field">
-        <label class="form-label" for="fieldPhone">Номер телефона</label>
-        <input class="form-input" id="fieldPhone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required inputmode="tel">
-        <div class="form-error" id="errPhone">Введите корректный номер телефона</div>
-      </div>
-      <button type="submit" class="modal-submit">Купить</button>
-      <p class="modal-note">Доступ придёт в Telegram сразу после оплаты.<br>Нажимая «Купить», вы соглашаетесь с <button class="privacy-link" id="privacyLinkModal" style="font-size:inherit;text-decoration:underline;text-underline-offset:2px;color:var(--mid);">политикой конфиденциальности</button>.</p>
-    </form>
-  </div>
-</div>
 
 <!-- ── STICKY BAR ── -->
 <div class="sticky-bar" id="stickyBar">
@@ -1608,7 +1363,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="sticky-cta" id="stickyCta">Купить</button>
   </div>
 </div>
-
+<!-- ── BUY MODAL ── -->
+<div class="modal-overlay" id="buyModal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">&#215;</button>
+    <div class="modal-eyebrow">Практикум</div>
+    <h3>Визуал который<br><em>продаёт</em></h3>
+    <div class="modal-price-row">
+      <span class="modal-price">1 390 ₽</span>
+      <span class="modal-old">10 990 ₽</span>
+      <span class="badge-crim">−87%</span>
+    </div>
+    <form id="buyForm" novalidate>
+      <div class="form-field">
+        <label class="form-label" for="fName">Имя</label>
+        <input class="form-input" id="fName" type="text" placeholder="Ваше имя" autocomplete="given-name" required>
+        <div class="form-err" id="errName">Введите ваше имя</div>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="fPhone">Номер телефона</label>
+        <input class="form-input" id="fPhone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required>
+        <div class="form-err" id="errPhone">Введите корректный номер телефона</div>
+      </div>
+      <button type="submit" class="modal-submit">Купить</button>
+      <p class="modal-note">Доступ придёт в Telegram сразу после оплаты.<br>
+      Нажимая «Купить», вы соглашаетесь с
+      <button type="button" class="privacy-link" id="privacyFromModal" style="font-size:inherit;color:var(--mid)">политикой конфиденциальности</button>.</p>
+    </form>
+  </div>
+</div>
 <!-- ── PRIVACY MODAL ── -->
 <div class="modal-overlay" id="privacyModal">
   <div class="modal privacy-modal">
@@ -1617,77 +1400,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h3>Политика <em>конфиденциальности</em></h3>
     <div class="privacy-body">
       <h4>1. Оператор данных</h4>
-      <p>Индивидуальный предприниматель Вадри Лидия (далее — Оператор), Instagram @li_vadri.</p>
-
+      <p>Индивидуальный предприниматель Вадри Лидия, @li_vadri в Instagram.</p>
       <h4>2. Какие данные собираются</h4>
-      <p>При оформлении заказа Оператор собирает: имя; номер мобильного телефона.</p>
-
+      <p>При оформлении заказа: имя и номер мобильного телефона.</p>
       <h4>3. Цель обработки</h4>
-      <p>Данные используются исключительно для обработки и исполнения заказа, а также для передачи приобретённого продукта через Telegram.</p>
-
+      <p>Обработка и исполнение заказа; передача продукта через Telegram-бот.</p>
       <h4>4. Передача третьим лицам</h4>
-      <p>Персональные данные не передаются третьим лицам, за исключением платёжного оператора, привлекаемого для проведения расчётов.</p>
-
+      <p>Данные не передаются третьим лицам, кроме платёжного оператора для проведения расчётов.</p>
       <h4>5. Срок хранения</h4>
-      <p>Данные хранятся не дольше срока, необходимого для исполнения заказа, и удаляются по истечении 1 года с момента сбора.</p>
-
+      <p>Не дольше срока исполнения заказа; удаляются по истечении 1 года.</p>
       <h4>6. Ваши права</h4>
-      <p>Вы вправе потребовать уточнения, блокирования или удаления своих персональных данных. Для этого напишите в Direct Instagram @li_vadri.</p>
-
+      <p>Вы вправе потребовать уточнения, блокирования или удаления данных. Напишите в Direct Instagram @li_vadri.</p>
       <h4>7. Согласие</h4>
-      <p>Нажимая кнопку «Купить», вы подтверждаете согласие на обработку персональных данных в соответствии с настоящей политикой и Федеральным законом № 152-ФЗ «О персональных данных».</p>
+      <p>Нажимая «Купить», вы подтверждаете согласие на обработку персональных данных согласно Федеральному закону № 152-ФЗ «О персональных данных».</p>
     </div>
   </div>
 </div>
-
-<script>
-  // ── Timer ──
-  (function() {
-    const KEY = 'li_vadri_dl';
-    let dl = parseInt(localStorage.getItem(KEY));
-    if (!dl || dl < Date.now()) {
-      dl = Date.now() + 24 * 60 * 60 * 1000;
-      localStorage.setItem(KEY, dl);
-    }
-    const el = document.getElementById('heroTimer');
-    function tick() {
-      const diff = dl - Date.now();
-      if (diff <= 0) { el.textContent = '00:00:00'; return; }
-      const h = String(Math.floor(diff / 3600000)).padStart(2,'0');
-      const m = String(Math.floor(diff % 3600000 / 60000)).padStart(2,'0');
-      const s = String(Math.floor(diff % 60000 / 1000)).padStart(2,'0');
-      el.textContent = h + ':' + m + ':' + s;
-      setTimeout(tick, 1000);
-    }
-    tick();
-  })();
-
-  // ── Sticky bar ──
-  (function() {
-    const bar = document.getElementById('stickyBar');
-    const hero = document.querySelector('.hero');
-    const final = document.querySelector('.final');
-    function update() {
-      const heroGone = hero.getBoundingClientRect().bottom < 0;
-      const finalVisible = final.getBoundingClientRect().top < window.innerHeight * 0.85;
-      bar.classList.toggle('visible', heroGone && !finalVisible);
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    document.getElementById('stickyCta').addEventListener('click', openModal);
-  })();
-
-  // ── Privacy modal ──
-  (function() {
-    const pm = document.getElementById('privacyModal');
-    function openPrivacy(e) { e.preventDefault(); pm.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closePrivacy() { pm.classList.remove('open'); document.body.style.overflow = ''; }
-    document.getElementById('privacyLink').addEventListener('click', openPrivacy);
-    const ml = document.getElementById('privacyLinkModal');
-    if (ml) ml.addEventListener('click', openPrivacy);
-    document.getElementById('privacyClose').addEventListener('click', closePrivacy);
-    pm.addEventListener('click', e => { if (e.target === pm) closePrivacy(); });
-  })();
-</script>
-
 </body>
 </html>
