@@ -1402,7 +1402,7 @@ document.getElementById('buyForm').addEventListener('submit',async function(e){
     await fetch(WEBHOOK,{
       method:'POST',
       mode:'no-cors',
-      headers:{'Content-Type':'application/json'},
+      headers:{'Content-Type':'text/plain;charset=UTF-8'},
       body:JSON.stringify({
         name:nm.value.trim(),
         phone:ph2.value,
