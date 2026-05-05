@@ -1267,6 +1267,9 @@
       <span class="badge-crim">−87%</span>
     </div>
     <form id="buyForm" novalidate>
+      <input type="hidden" id="utmSource">
+      <input type="hidden" id="utmMedium">
+      <input type="hidden" id="utmCampaign">
       <div class="form-field">
         <label class="form-label" for="fName">Имя</label>
         <input class="form-input" id="fName" type="text" placeholder="Ваше имя" autocomplete="given-name" required>
@@ -1277,7 +1280,7 @@
         <input class="form-input" id="fPhone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required>
         <div class="form-err" id="errPhone">Введите корректный номер телефона</div>
       </div>
-      <button type="submit" class="modal-submit">Купить</button>
+      <button type="submit" class="modal-submit" id="buySubmitBtn">Купить</button>
       <p class="modal-note">Доступ придёт в Telegram сразу после оплаты.<br>
       Нажимая «Купить», вы соглашаетесь с
       <button type="button" class="privacy-link" id="privacyFromModal" style="font-size:inherit;color:var(--mid);text-decoration:underline">политикой конфиденциальности</button>.</p>
@@ -1366,8 +1369,21 @@ ph.addEventListener('keydown',function(e){if(e.key==='Backspace'&&this.value==='
 ph.addEventListener('focus',function(){if(!this.value)this.value='+7 (';});
 ph.addEventListener('blur',function(){if(this.value==='+7 ('||this.value==='+7')this.value='';});
 
+/* ── UTM capture ── */
+(function(){
+  const p=new URLSearchParams(window.location.search);
+  const map={utm_source:'utmSource',utm_medium:'utmMedium',utm_campaign:'utmCampaign'};
+  Object.entries(map).forEach(([k,id])=>{
+    const el=document.getElementById(id);
+    if(el)el.value=p.get(k)||'';
+  });
+})();
+
 /* ── Form submit ── */
-document.getElementById('buyForm').addEventListener('submit',function(e){
+const WEBHOOK='https://script.google.com/macros/s/AKfycbwukOX9-cEkg0XgzNTLn9MZT3WOQlYvNsSs7-RRxzYg5D4Zp7fpXqc73s7QCMalDVPE/exec';
+const PAYMENT='https://payform.ru/kobqfZi/';
+
+document.getElementById('buyForm').addEventListener('submit',async function(e){
   e.preventDefault();
   let ok=true;
   const nm=document.getElementById('fName'),ne=document.getElementById('errName');
@@ -1377,8 +1393,28 @@ document.getElementById('buyForm').addEventListener('submit',function(e){
   if(ph2.value.replace(/\D/g,'').length<11){ph2.classList.add('err');pe.classList.add('show');ok=false;}
   else{ph2.classList.remove('err');pe.classList.remove('show');}
   if(!ok)return;
-  /* TODO: подключить платёжный шлюз */
-  closeModal();this.reset();
+
+  const btn=document.getElementById('buySubmitBtn');
+  btn.disabled=true;
+  btn.textContent='Отправляем...';
+
+  try{
+    await fetch(WEBHOOK,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name:nm.value.trim(),
+        phone:ph2.value,
+        utm_source:document.getElementById('utmSource').value,
+        utm_medium:document.getElementById('utmMedium').value,
+        utm_campaign:document.getElementById('utmCampaign').value,
+        page_url:window.location.href
+      })
+    });
+  }catch(err){console.error('Webhook error:',err);}
+
+  window.location.href=PAYMENT;
 });
 
 /* ── Timer (24h, localStorage) ── */
