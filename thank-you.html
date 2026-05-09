@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Спасибо — Лидия Вадри</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+
+  body {
+    background: #FAF8F3;
+    color: #1A1614;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    padding: 40px 28px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .check {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #8C1A2A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+    animation: pop .5s cubic-bezier(.32,.72,0,1) both;
+  }
+
+  @keyframes pop {
+    from { transform: scale(.6); opacity: 0; }
+    to   { transform: scale(1);  opacity: 1; }
+  }
+
+  .check svg { display: block; }
+
+  .eyebrow {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8C1A2A;
+    margin-bottom: 16px;
+    animation: up .5s .1s ease both;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -1px;
+    color: #1A1614;
+    margin-bottom: 8px;
+    animation: up .5s .15s ease both;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #8C1A2A;
+  }
+
+  .sub {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #6A6360;
+    margin-bottom: 40px;
+    animation: up .5s .2s ease both;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    background: #8C1A2A;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background .2s;
+    animation: up .5s .25s ease both;
+  }
+
+  .btn:active { background: #6A1120; }
+
+  .note {
+    margin-top: 16px;
+    font-size: 11px;
+    font-weight: 300;
+    color: #6A6360;
+    line-height: 1.6;
+    animation: up .5s .3s ease both;
+  }
+
+  @keyframes up {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="check">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M5 12.5L10 17.5L19 8" stroke="#8C1A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="eyebrow">Оплата прошла</div>
+  <h1>Спасибо<br>за <em>покупку</em></h1>
+  <p class="sub">Практикум уже ждёт тебя<br>в Telegram — забери прямо сейчас</p>
+
+  <a href="REPLACE_TELEGRAM_LINK" class="btn">Забрать практикум</a>
+
+  <p class="note">Если кнопка не работает — напиши напрямую<br>@li_vadri</p>
+</div>
+</body>
+</html>
