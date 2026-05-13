@@ -951,10 +951,14 @@
   .timer-digits{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#fff;letter-spacing:3px;line-height:1}
 
   /* ─── STICKY BAR ─── */
-  .sticky-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%) translateY(110%);width:100%;max-width:480px;background:var(--crim-dk);padding:14px 20px calc(14px + env(safe-area-inset-bottom));z-index:50;transition:transform .38s cubic-bezier(.32,.72,0,1);border-top:1px solid rgba(255,255,255,.1)}
+  .sticky-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%) translateY(110%);width:100%;max-width:480px;background:#3D1020;padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:50;transition:transform .38s cubic-bezier(.32,.72,0,1);border-top:1px solid rgba(255,255,255,.12)}
   .sticky-bar.visible{transform:translateX(-50%) translateY(0)}
-  .sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
-  .sticky-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;letter-spacing:-.5px;line-height:1}
+  .sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .sticky-timer-block{display:flex;flex-direction:column;align-items:center;min-width:60px}
+  .sticky-timer-label{font-family:'Raleway',sans-serif;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:2px}
+  .sticky-timer-val{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#C4955A;line-height:1;font-variant-numeric:tabular-nums}
+  .sticky-price-block{display:flex;flex-direction:column;align-items:center}
+  .sticky-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:-.5px;line-height:1}
   .sticky-old-price{font-size:10px;font-weight:300;color:rgba(255,255,255,.38);text-decoration:line-through;margin-top:2px}
   .sticky-cta{height:48px;padding:0 26px;background:#fff;color:var(--crimson);font-family:'Raleway',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s}
   .sticky-cta:active{background:var(--bg2)}
@@ -1414,11 +1418,15 @@
 <!-- ── STICKY BAR ── -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-inner">
-    <div>
+    <div class="sticky-timer-block">
+      <div class="sticky-timer-label">Осталось</div>
+      <div class="sticky-timer-val" id="stickyTimer">--:--:--</div>
+    </div>
+    <div class="sticky-price-block">
       <div class="sticky-price">13 €</div>
       <div class="sticky-old-price">100 €</div>
     </div>
-    <button class="sticky-cta" id="stickyCta">Купить</button>
+    <button class="sticky-cta btn" id="stickyCta">Получить доступ</button>
   </div>
 </div>
 
@@ -1596,7 +1604,8 @@ document.getElementById('buyForm').addEventListener('submit',async function(e){
     const h=String(Math.floor(diff/3600000)).padStart(2,'0');
     const m=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
     const s=String(Math.floor(diff%60000/1000)).padStart(2,'0');
-    el.textContent=h+':'+m+':'+s;
+    el&&(el.textContent=h+':'+m+':'+s);
+    elSticky&&(elSticky.textContent=h+':'+m+':'+s);
     setTimeout(tick,1000);
   }
   tick();
