@@ -1015,12 +1015,17 @@
 
   .hero-v2-title {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 1.18;
+    line-height: 1.15;
     letter-spacing: -0.5px;
     color: #FAF8F3;
     margin-bottom: 16px;
+  }
+  .hero-v2-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: #C4955A;
   }
 
   .hero-v2-sub {
@@ -1063,13 +1068,14 @@
   }
 
   .hero-v2-price {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 8px;
     margin-bottom: 24px;
   }
-
+  .hero-v2-price-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
   .hero-v2-price-old {
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
@@ -1077,34 +1083,32 @@
     color: rgba(250,248,243,0.4);
     text-decoration: line-through;
   }
-
   .hero-v2-price-badge {
     font-family: 'Raleway', sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: #5C1F32;
     background: #C4955A;
     border-radius: 2px;
-    padding: 2px 6px;
-    align-self: center;
+    padding: 3px 8px;
   }
-
   .hero-v2-price-now {
     font-family: 'Playfair Display', serif;
-    font-size: 38px;
+    font-size: 44px;
     font-weight: 700;
     color: #FAF8F3;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    margin-bottom: 6px;
   }
-
   .hero-v2-price-note {
     font-family: 'Raleway', sans-serif;
     font-size: 11px;
     font-weight: 300;
     color: rgba(250,248,243,0.5);
-    width: 100%;
-    margin-top: -4px;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
   }
 
   .hero-v2-btn {
@@ -1161,19 +1165,21 @@
   <div class="hero-v2-deco hero-v2-deco--br"></div>
   <div class="hero-v2-inner">
     <div class="hero-v2-label">Для бьюти-мастеров</div>
-    <h1 class="hero-v2-title">Как собрать профиль&nbsp;в Instagram, который&nbsp;приводит клиентов —&nbsp;за один вечер</h1>
+    <h1 class="hero-v2-title">Как собрать профиль в&nbsp;Instagram, который <em>приводит клиентов</em> —&nbsp;за один вечер</h1>
     <p class="hero-v2-sub">Для мастеров, у которых красивые работы, но запись не растёт</p>
     <ul class="hero-v2-list">
-      <li>Разберёшь, почему профиль не конвертирует — даже с хорошими фото</li>
-      <li>Настроишь шапку, хайлайты и навигацию за один вечер</li>
-      <li>Получишь шаблоны, которые сразу привлекают целевых клиентов</li>
-      <li>Поймёшь, какой визуал продаёт, а какой — просто красивый</li>
+      <li>Без платной рекламы и smm-специалиста</li>
+      <li>Без сложных редакторов и дизайна</li>
+      <li>Система из 6 шагов — внедришь сразу</li>
+      <li>Работает даже с маленькой аудиторией</li>
     </ul>
     <div class="hero-v2-price">
-      <span class="hero-v2-price-old">99&nbsp;€</span>
-      <span class="hero-v2-price-badge">−87%</span>
-      <span class="hero-v2-price-now">13&nbsp;€</span>
-      <span class="hero-v2-price-note">доступ сразу после оплаты</span>
+      <div class="hero-v2-price-top">
+        <span class="hero-v2-price-old">99&nbsp;€</span>
+        <span class="hero-v2-price-badge">−87%</span>
+      </div>
+      <div class="hero-v2-price-now">13&nbsp;€</div>
+      <div class="hero-v2-price-note">доступ сразу после оплаты</div>
     </div>
     <button class="hero-v2-btn js-open-buy btn">Получить доступ →</button>
     <div class="hero-v2-bonus">🎁 При оплате сегодня — разбор типичных ошибок в подарок</div>
